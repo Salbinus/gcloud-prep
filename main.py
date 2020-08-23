@@ -44,35 +44,3 @@ if __name__ == '__main__':
     # http://flask.pocoo.org/docs/1.0/quickstart/#static-files. Once deployed,
     # App Engine itself will serve those files as configured in app.yaml.
     app.run(host='127.0.0.1', port=8080, debug=True)
-
-# from datetime import datetime, timedelta
-# from typing import Dict
-# import pandas as pd
-
-
-# from requests import Response
-# from requests import get as get_request
-
-# BASE_URL: str = 'https://api.exchangeratesapi.io'
-# LATEST_ENDPOINT: str = '/latest'
-# HISTORY_ENDPOINT:str='history'
-
-# execution_date = datetime.today().strftime('%Y-%m-%d')
-
-# execution_date_minus_30 = (datetime.strptime(execution_date, '%Y-%m-%d') - timedelta(days=30)).strftime('%Y-%m-%d')
-
-# dates = [(datetime.strptime(execution_date, '%Y-%m-%d') - timedelta(days=day)).strftime('%Y-%m-%d') for day in range(30)]
-
-# response: Response = get_request(f'{BASE_URL}/{HISTORY_ENDPOINT}?start_at={execution_date_minus_30}&end_at={execution_date}')
-
-# # print(response.text)
-
-# rates: Dict = response.json().get('rates')
-
-# table: list = [[day, cur, rates[day][cur]] for day in rates for cur in rates[day]]
-# #for day in rates:
-# #print(table)
-
-# df = pd.DataFrame(table, columns=['day','currency','value'])
-
-# print(df)
