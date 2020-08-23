@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+  <title>Exchange Rates</title>
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+  <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <h1>API Example</h1>
+
+  <h2>Currency Data for the last 30 days</h2>
+  <a href="{{ url_for('root') }}"><button>REFRESH</button></a>
+  {% for table in tables %}
+    {{titles[loop.index]}}
+    {{ table|safe }}
+  {% endfor %}
+</body>
+</html>
